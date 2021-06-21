@@ -849,13 +849,13 @@ public CommonReturnType generateToken(··· @RequestParam(name = "verifyCode") 
 
 客户端请求接口，必须先从令牌桶中获取令牌，令牌是由一个“定时器”定期填充的。在一个时间内，令牌的数量是有限的。令牌桶的大小为100，那么TPS就为100。
 
-![](https://raw.githubusercontent.com/MaJesTySA/miaosha_Shop/master/imgs/tokenBucket.png)
+![](imgs/tokenBucket.png)
 
 ### 漏桶
 
 客户端请求接口，会向漏桶里面“加水”。漏桶每秒漏出一定数量的“水”，也就是处理请求。只有当漏洞不满时，才能请求。
 
-![](https://raw.githubusercontent.com/MaJesTySA/miaosha_Shop/master/imgs/leekBucket.png)
+![](imgs/leekBucket.png)
 
 ### 区别
 
