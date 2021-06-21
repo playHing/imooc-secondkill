@@ -20,6 +20,9 @@ import java.util.stream.Collectors;
 public class ItemController extends BaseController{
     @Autowired
     private ItemService itemService;
+
+    // consumes = {application/x-www-form-urlencoded} 指的是接受 application/x-www-form-urlencoded 格式的媒体格式类型
+    // application/x-www-form-urlencoded ：<form encType=""> 中默认的encType，form 表单数据被编码为 kv-格式发送到服务器（表单默认的提交数据的格式）
     @RequestMapping(value = "/create",method = {RequestMethod.POST},consumes = {CONTENT_TYPE_FORMED})
     @ResponseBody
     public CommonReturnType createItem(@RequestParam(name = "title")String title,

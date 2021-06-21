@@ -156,6 +156,8 @@ public class CommonReturnType {
 
 这些内容，封装到了`error`包下面的三个类里面。一个是`CommonError`接口，一个是枚举异常类`EmBizError`，一个是异常处理类`BizException`。
 
+注解：感觉语义来说不应该叫 Error，叫 Exception 好点。另 BizException 是包装类，包装的 EmBizError 这个枚举，使用时面向 CommonError 这个接口。
+
 `CommonError`接口提供三个方法，一个获得错误码的方法`getErrCode()`，一个获得错误信息的方法`getErrMsg()`，一个设置错误信息的方法`setErrMsg(String errMsg)`。
 
 ```java
@@ -232,7 +234,7 @@ public class BizException extends Exception implements CommonError{
 throw new BizException(EmBizError.PARAMETER_VALIDATION_ERROR);
 ```
 
-## 异常拦截器处理自定义异常
+### 异常拦截器处理自定义异常
 
 虽然上面抛出了自定义的`BizException`异常，但是SpringBoot还是和之前一样，返回500页面。这是由于，`BizException`被抛给了Tomcat，而Tomcat不知道如何处理`BizException`。所以，需要一个**拦截器**，拦截抛出的`BizException`。
 
@@ -634,5 +636,5 @@ orderModel.setPromoId(promoId);
 
 ------
 
-[【进阶项目笔记 上】](https://github.com/MaJesTySA/miaosha_Shop/blob/master/docs/advance_p1.md)，包含**云端部署**、**jmeter性能压测**、**Tomcat优化**、**分布式扩展**、**缓存优化**等。
+[【进阶项目笔记 上】](docs/advance_p1.md)，包含**云端部署**、**jmeter性能压测**、**Tomcat优化**、**分布式扩展**、**缓存优化**等。
 
