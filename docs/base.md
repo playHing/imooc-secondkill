@@ -62,7 +62,7 @@
 
 # 要点和细节
 
-## Data Object/Model/View Object
+## Data Object / Model / View Object
 
 通常的做法是一张用户信息`user_info`表，包含了用户的**所有信息**。而企业级一般将用户的**敏感信息**从用户表从分离出来，比如密码，单独作为一张表。这样，就需要两个DAO来操作同一个用户，分别是`UserDAO`和`UserPasswordDAO`，这就是Data Object，从数据库直接映射出来的Object。
 
@@ -70,7 +70,15 @@
 
 但是在Controller层，我们并不希望将`UserModel`的“密码”、“注册信息”等无关信息暴露给前端，这就需要`View Object`，将需要暴露的字段从`Model`中剔除掉。
 
+#### 注解：建议的开发流程步骤
+1. 先考虑 Domain Model，确立业务模型
+2. 到 MySQL 建表，表中各字段建议设为 NOT NULL，按类型设 DEFAULT_VALUE
+3. 使用 Mybatis Generator 生成 Data Object 和 Mybatis Mapper
+4. 写 Service
+5. 建 View Object, 写 Controller
+
 ```java
+// Data Object
 public class UserDO {
     private Integer id;
     private String name;
@@ -83,6 +91,7 @@ public class UserDO {
 ```
 
 ```java
+// Data Object
 public class UserPasswordDO {
     private Integer id;
     private String encrptPassword;
@@ -91,6 +100,7 @@ public class UserPasswordDO {
 ```
 
 ```java
+// Domain Model
 public class UserModel {
     private Integer id;
     private String name;
@@ -105,6 +115,7 @@ public class UserModel {
 ```
 
 ```java
+// View Object
 public class UserVO {
     private Integer id;
     private String name;
