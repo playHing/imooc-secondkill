@@ -40,23 +40,23 @@
 
 ## 注册
 
-<img src="imgs/register.png" style="width:300px;height:auto" align="middle"/>
+<img src="../imgs/register.png" style="width:300px;height:auto" align="middle"/>
 
-<img src="imgs/register1.png" style="width:300px;height:auto"/>
+<img src="../imgs/register1.png" style="width:300px;height:auto"/>
 
 ## 商品列表
 
-<img src="imgs/list.png" style="width:600px;height:auto" align="center"/>
+<img src="../imgs/list.png" style="width:600px;height:auto" align="center"/>
 
 ## 商品详情
 
-<img src="imgs/item.png" style="width:300px;height:auto" align="center"/>
+<img src="../imgs/item.png" style="width:300px;height:auto" align="center"/>
 
 ------
 
 # 项目架构
 
-<img src="imgs/structure.png" style="width:auto;height:auto" align="center"/>
+<img src="../imgs/structure.png" style="width:auto;height:auto" align="center"/>
 
 ------
 

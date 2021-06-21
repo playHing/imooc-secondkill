@@ -88,7 +88,7 @@
 
 # 进阶项目核心知识点
 
-![](imgs/points.png)
+![](../imgs/points.png)
 
 ------
 
@@ -96,13 +96,13 @@
 
 ## 项目结构—数据模型
 
-![](imgs/models.png)
+![](../imgs/models.png)
 
-![](imgs/datamodels.png)
+![](../imgs/datamodels.png)
 
 ## 项目结构—DAO/Service/Controller结构
 
-![](imgs/classmodels.png)
+![](../imgs/classmodels.png)
 
 ## 全局异常处理类
 
@@ -218,7 +218,7 @@ nohup java -Xms400m -Xmx400m -XX:NewSize=200m -XX:MaxNewSize=200m -jar miaosha.j
 
 ## 项目架构
 
-![](imgs/frame1.png)
+![](../imgs/frame1.png)
 
 ## 发现并发容量问题
 
@@ -299,7 +299,7 @@ public class WebServerConfiguration implements WebServerFactoryCustomizer<Config
 
 ## 项目架构
 
-![](imgs/frame2.png)
+![](../imgs/frame2.png)
 
 ## Nginx部署前端静态资源
 
@@ -307,7 +307,7 @@ public class WebServerConfiguration implements WebServerFactoryCustomizer<Config
 
 **项目架构**：
 
-![](imgs/frame3.png)
+![](../imgs/frame3.png)
 
 将静态资源上传到相应目录，并修改`nginx.conf`中的
 
@@ -396,11 +396,11 @@ server{
 
 通过`ps -ef|grep nginx`命令可以看到有两个Nginx进程，一个标注为`master`，一个标注为`worker`，而且`worker`进程是`master`进程的子进程。这种父子关系的好处就是，`master`进程可以管理`worker`进程。
 
-![](imgs/ngxin2.jpg)
+![](../imgs/ngxin2.jpg)
 
 ### Ngxin进程结构
 
-![](imgs/nginx.png)
+![](../imgs/nginx.png)
 
 ### Master-worker高效原理
 
@@ -544,7 +544,7 @@ if(userModel==null){
 
 ## 项目架构
 
-![](imgs/frame4.png)
+![](../imgs/frame4.png)
 
 ## 优化商品查询接口—单机版Redis缓存
 
@@ -880,7 +880,7 @@ location /luaitem/get{
 
 之前静态资源是直接从Nginx服务器上获取，而现在会先去CDN服务器上获取，如果没有则回源到Nginx服务器上获取。
 
-![](imgs/cdn.png)
+![](../imgs/cdn.png)
 
 ## CDN
 
@@ -913,7 +913,7 @@ CDN是内容分发网络，一般用来存储（缓存）项目的静态资源�
 
 如果不缓存，那就选择`no-store`。如果需要缓存，但是需要重新验证，则选择`no-cache`；如果不需要重新验证，则选择`private`或者`public`。然后设置`max-age`，最后添加`ETag Header`。
 
-<img src="imgs/choosehead.png" width=60% />
+<img src="../imgs/choosehead.png" width=60% />
 
 #### 有效性验证
 
@@ -921,7 +921,7 @@ CDN是内容分发网络，一般用来存储（缓存）项目的静态资源�
 
 #### 请求资源流程
 
-<img src="imgs/requestResrProcess.png" width=80% />
+<img src="../imgs/requestResrProcess.png" width=80% />
 
 ### CDN深入—浏览器三种刷新方式
 
